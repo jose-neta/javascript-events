@@ -2,18 +2,19 @@
 
 const EventEmitter = require('events');
 
-class MyEmitter extends EventEmitter {}
+class MyEmitter extends EventEmitter { }
 
 class Book {
-  constructor (title, chapters) {
-    this.title = typeof title === "undefined" ? "anonymous book" : title; 
-    this.chapters = typeof chapters === "undefined" ? [] : chapters; 
+  constructor(title, chapters) {
+    this.title = typeof title === "undefined" ? "anonymous book" : title;
+    this.chapters = typeof chapters === "undefined" ? [] : chapters;
   }
 }
 
 class Chapter {
-  constructor (title) {
-    this.title = title; 
+  constructor(title) {
+    this.title = title;
+    this.title = title;
   }
 }
 
@@ -25,10 +26,10 @@ class Chapter {
 
   const b = new Book("Perfume");
 
-  [1,2,3,4,5,6,7,8,9].map(c => {
+  [1, 2, 3, 4, 5, 6, 7, 8, 9].map(c => {
     const ch = new Chapter(`ch ${c}`)
     b.chapters.push(ch);
 
-    myEmitter.emit('add_chapter', ch.title, b.title);
+    return myEmitter.emit('add_chapter', ch.title, b.title);
   });
 })();
