@@ -24,12 +24,12 @@ class Chapter {
     console.log(`chapter "${c}" was added to book "${b}"`);
   });
 
-  const b = new Book("Perfume");
+  const perfume = new Book("Perfume");
 
   [1, 2, 3, 4, 5, 6, 7, 8, 9].map(c => {
     const ch = new Chapter(`ch ${c}`)
-    b.chapters.push(ch);
+    perfume.chapters.push(ch);
 
-    return myEmitter.emit('add_chapter', ch.title, b.title);
+    return myEmitter.emit('add_chapter', ch.title, perfume.title);
   });
 })();
